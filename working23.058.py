@@ -68,7 +68,7 @@ def printResults(hits):
         label = (recipe['recipe']['label'])
         url = (recipe['recipe']['url'])
         time = (recipe['recipe'] ['totalTime'])
-        print(Fore.YELLOW + ' {} is {} calories, it take {} minutes the link for the recipe is:'.format(label, int(calories), time) + Fore.GREEN + ' {}' .format(url))
+        print(Fore.YELLOW + ' {} is {} calories, it take {} minutes the link for the recipe is:'.format(label, int(calories), time) + ' {}' .format(url))
 
 
 def healthLabels():
