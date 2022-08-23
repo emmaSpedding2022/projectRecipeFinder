@@ -24,7 +24,7 @@ def results(ingredient):
         else:
             print('there are no recipes containing that ingredient try again,')
 
-# method to filter list by calories #
+# method to filter list by calories
 def calories(calorie_input):
     data = basic_search(ingredient)
     recipe_number= 0
