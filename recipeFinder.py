@@ -7,7 +7,7 @@ def basic_search(ingredient):
     key = 'ae53400b50540675de6131d635744446'
     url = 'https://api.edamam.com/search?q={}&app_id={}&app_key={}&from=0&to=15'.format(ingredient, id,
     key)
-    # print(url)
+    print(url)
     response = requests.get(url)
     return response.json()
 
@@ -15,14 +15,12 @@ def basic_search(ingredient):
 def results(ingredient):
     recipe_number = 0
     data = basic_search(ingredient)
+
     for recipe in data['hits']:
         label = (recipe['recipe']['label'] )
         url = (recipe['recipe']['url'] )
         recipe_number = recipe_number +1
-        if recipe_number >0:
-            print('Recipe {}, is {}, and the url is {}'.format(recipe_number,label,url))
-        else:
-            print('there are no recipes containing that ingredient try again,')
+        print('Recipe {}, is {}, and the url is {}'.format(recipe_number,label,url))
 
 # method to filter list by calories
 def calories(calorie_input):
@@ -50,7 +48,7 @@ def cook_time(time_input):
 
 # method to filter the recipes
 def filter(filter):
-    if str(filter)== 'c':
+    if str(filter) == 'c':
         calorie_input = int(input("how many calories would you like to have for your recipe? "))
         calories(calorie_input)
     if str(filter) == 't':
@@ -60,7 +58,6 @@ def filter(filter):
 # Main program #
 ingredient = input('Enter an ingredient ')
 basic_search(ingredient)
-results(ingredient)
 results(ingredient)
 input_filter = input("you can filter your results by choosing \n c = calories  \n t = time taken  \nplease enter a choice c or t  ")
 filter(input_filter)
