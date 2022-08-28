@@ -101,7 +101,9 @@ def printResults(hits):
 
 
 main()
-
+# notes #
+# I tested it with Pork and calories 800 and time 60 there are no recipes which match that so it asks again
+#
 #******
 #Method to filter on a health label - not complete
 #******
